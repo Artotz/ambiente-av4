@@ -1,0 +1,267 @@
+<html>
+  <head>
+    <script type="text/javascript" src="PrimeNumber.js"></script>
+    <script type="text/javascript" src="GCD.js"></script>
+    <script type="text/javascript" src="Fibonacci.js"></script>
+    <script type="text/javascript" src="Sum.js"></script>
+    <script type="text/javascript" src="QuickSort.js"></script>
+    <script type="text/javascript" src="WholeNumbers.js"></script>
+  </head>
+  <body style="background-color: #fff">
+    <!--
+    <script>
+      function app() {
+        let choice = prompt(`Choose an option:
+        1 - Prime Number
+        2 - Sum
+        3 - Fibonacci
+        4 - GCD
+        5 - QuickSort
+        6 - Whole Number Count
+        0 - Exit`);
+
+        //Prime Number
+        if (choice == 1) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter a number: ");
+          alert("You entered the following number: " + input);
+          alert("Result: The number " + input + " " + (isPrime(input) ? "is Prime." : "is not Prime."));
+        }
+
+        //Sum
+        else if (choice == 2) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter integers separated by spaces: ");
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          alert("You entered the following numbers: \n" + numbers);
+          alert("Result: The sum of these numbers is " + sumArray(numbers));
+        }
+
+        //Fibonacci
+        else if (choice == 3) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter a number: ");
+          alert("You entered the following number: " + input);
+          alert("Result: The term " + input + " of the Fibonacci sequence is: " + calculateFibonacci(input) + ".");
+        }
+
+        //GCD
+        else if (choice == 4) {
+          alert("You chose option " + choice + ".");
+          let input1 = prompt("Enter the first number: ");
+          let input2 = prompt("Enter the second number: ");
+          alert("You entered the following numbers: \n" + input1 + " and " + input2);
+          alert("Result: The GCD of " + input1 + " and " + input2 + " is " + calculateGCD(input1, input2) + ".");
+        }
+
+        //QuickSort
+        else if (choice == 5) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter integers separated by spaces: ");
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          alert("You entered the following numbers: \n" + numbers);
+          quickSort(numbers);
+          alert("Result: Here's the quicksorted list: \n" + numbers);
+        }
+
+        //Whole Number Count
+        else if (choice == 6) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter integers separated by spaces: ");
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          alert("You entered the following numbers: \n" + numbers);
+
+          alert("Result: The total count of whole numbers is " + countWholeNumbers(numbers) + ".");
+        }
+
+        //Exit
+        else if (choice == 0) {
+          alert("Exiting the program...");
+        }
+
+        //Error
+        else {
+          alert("Invalid choice. Please select a valid option.");
+        }
+      }
+
+      app();
+    </script>
+    -->
+
+    <div style="display: flex; flex-grow: 1; justify-content: center">
+      <div
+        style="display: flex; width: 50%; height: 500px; padding: 16px; justify-content: center; align-items: center"
+      >
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(#e68888, #91a8e5);
+            width: 500;
+            flex-basis: auto;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 16px;
+            gap: 16px;
+            border-radius: 64px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          "
+        >
+          <div style="font-size: 32px; padding-bottom: 32px">AV2</div>
+
+          <div>Algorithm</div>
+          <select id="select">
+            <option value="1">Prime Number</option>
+            <option value="2">Sum</option>
+            <option value="3">Fibonacci</option>
+            <option value="4">GCD</option>
+            <option value="5">QuickSort</option>
+            <option value="6">Whole Number Count</option>
+          </select>
+
+          <div id="inputText">Enter a number:</div>
+
+          <div style="gap: 8px">
+            <input id="input" />
+            <button id="button">Confirm</button>
+          </div>
+
+          <div>Result:</div>
+          <textarea id="textArea" readonly cols="50" style="resize: none"></textarea>
+
+          <a
+            style="padding-top: 16px"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://replit.com/@ArturMelo5/AmbienteAV2"
+            >Algoritmos em Java</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var select = document.getElementById("select");
+      var inputText = document.getElementById("inputText");
+      var inputArea = document.getElementById("input");
+      var button = document.getElementById("button");
+      var textArea = document.getElementById("textArea");
+
+      function meme1(choice) {
+        //console.log(choice);
+
+        inputArea.value = "";
+
+        //Prime Number
+        if (choice == "1") {
+          inputText.innerText = "Enter a number: ";
+        }
+
+        //Sum
+        else if (choice == "2") {
+          inputText.innerText = "Enter integers separated by spaces: ";
+        }
+
+        //Fibonacci
+        else if (choice == "3") {
+          inputText.innerText = "Enter a number: ";
+        }
+
+        //GCD
+        else if (choice == "4") {
+          inputText.innerText = "Enter the two integers separated by a space: ";
+        }
+
+        //QuickSort
+        else if (choice == "5") {
+          inputText.innerText = "Enter integers separated by spaces: ";
+        }
+
+        //Whole Number Count
+        else if (choice == "6") {
+          inputText.innerText = "Enter integers separated by spaces: ";
+        }
+      }
+
+      function meme2(choice) {
+        var input = inputArea.value;
+        //console.log(input);
+
+        //Prime Number
+        if (choice == 1) {
+          textArea.value = "The number " + input + " " + (isPrime(input) ? "is Prime." : "is not Prime.");
+        }
+
+        //Sum
+        else if (choice == 2) {
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          textArea.value = "The sum of these numbers is " + sumArray(numbers) + ".";
+        }
+
+        //Fibonacci
+        else if (choice == 3) {
+          textArea.value = "The term " + input + " of the Fibonacci sequence is: " + calculateFibonacci(input) + ".";
+        }
+
+        //GCD
+        else if (choice == 4) {
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          textArea.value =
+            "The GCD of " + numbers[0] + " and " + numbers[1] + " is " + calculateGCD(numbers[0], numbers[1]) + ".";
+        }
+
+        //QuickSort
+        else if (choice == 5) {
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          quickSort(numbers);
+          textArea.value = "Here's the quicksorted list: \n" + numbers + ".";
+        }
+
+        //Whole Number Count
+        else if (choice == 6) {
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseFloat(value);
+          });
+
+          textArea.value = "The total count of whole numbers is " + countWholeNumbers(numbers) + ".";
+        }
+      }
+
+      select.onchange = () => meme1(select.value);
+      button.onclick = () => meme2(select.value);
+    </script>
+  </body>
+</html>
